@@ -7,7 +7,7 @@ export default class Team {
 
   add(person) {
     if (this.members.has(person)) {
-        throw new Error('This character is already in the team');
+      throw new Error('This character is already in the team');
     }
     this.members.add(person);
     return this.members.size;
@@ -15,20 +15,20 @@ export default class Team {
 
   addAll(persons) {
     persons.forEach((item) => {
-        this.members.add(item);
+      this.members.add(item);
     });
     return this.members.size;
   }
 
   toArray() {
-    let arr = [];
+    const arr = [];
     this.members.forEach((item) => {
-        arr.push(item);
+      arr.push(item);
     });
     return arr.length;
   }
 }
 
-let team = new Team();
-let pers = new Character('First', 'Magician');
+const team = new Team();
+const pers = new Character('First', 'Magician');
 team.add(pers);
